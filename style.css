@@ -16,6 +16,7 @@ body {
     background-color: #ffffff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+    width: 100%; /* جعل العرض يتناسب مع عرض الشاشة */
 }
 
 /* تنسيق الرأس */
@@ -23,6 +24,7 @@ body {
     text-align: center;
     padding-bottom: 20px;
     border-bottom: 2px solid #e0e0e0;
+    word-wrap: break-word; /* تجنب خروج النصوص خارج الحدود */
 }
 
 h1 {
@@ -41,6 +43,7 @@ h2 {
 p {
     font-size: 1.1em;
     color: #555;
+    word-wrap: break-word; /* منع تجاوز النص لحدود الصفحة */
 }
 
 /* تنسيق معلومات الاتصال */
@@ -50,11 +53,16 @@ p {
     padding: 5px 10px;
     border-radius: 5px;
     transition: background 0.3s ease;
+    word-wrap: break-word; /* منع تجاوز النص لحدود الصفحة */
 }
 
 .contact-info a:hover {
     background-color: #3498db;
     color: white;
+}
+
+.contact-info i {
+    margin-right: 5px; /* إضافة مسافة بين الأيقونة والنص */
 }
 
 /* تنسيق الأقسام */
@@ -70,17 +78,6 @@ p {
     background-color: #f9f9f9;
 }
 
-/* شريط المهارات */
-ul {
-    padding-left: 20px;
-    list-style-type: none;
-}
-
-ul li {
-    margin-bottom: 10px;
-    font-size: 1.1em;
-}
-
 /* تحسين النص */
 ul {
     list-style-type: none; /* إخفاء النقاط */
@@ -90,4 +87,39 @@ ul {
 ul li {
     font-size: 1.1em; /* حجم مناسب للنص */
     margin-bottom: 10px; /* مسافة بين العناصر */
+}
+
+/* استجابة للشاشات الصغيرة */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px; /* تقليل الحشوة في الهواتف */
+    }
+
+    h1 {
+        font-size: 1.8em; /* تقليل حجم العنوان على الهواتف */
+    }
+
+    h2 {
+        font-size: 1.2em; /* تقليل حجم العناوين الفرعية */
+    }
+
+    p, .contact-info a {
+        font-size: 0.9em; /* تقليل حجم النص */
+    }
+
+    .contact-info {
+        display: flex;
+        flex-direction: column; /* جعل العناصر تتراصف عموديًا في الهواتف */
+        align-items: center; /* محاذاة النصوص في الوسط */
+    }
+
+    .contact-info a {
+        word-wrap: break-word; /* منع تجاوز النص لحدود الصفحة */
+        display: inline-block;
+        text-align: center; /* محاذاة البريد الإلكتروني والروابط في الوسط */
+    }
+
+    .header {
+        word-wrap: break-word; /* منع خروج النصوص عن الإطار */
+    }
 }
